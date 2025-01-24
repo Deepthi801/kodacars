@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -56,10 +57,18 @@ public class AddReservationPage extends TestBase{
         // Wait for options to appear
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement dropdownContainer = driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']"));
+		//driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/span[1]")).click();
+		
 
          // Locate all options and select the desired one
          List<WebElement> options = dropdownContainer.findElements(By.cssSelector(".ng-option.ng-star-inserted"));
+         JavascriptExecutor js = (JavascriptExecutor) driver; // Initialize JavaScript Executor
+
          for (WebElement option : options) {
+             // Scroll to the option to make it visible
+             js.executeScript("arguments[0].scrollIntoView(true);", option);
+
+             // Print the option text and click if it matches
              System.out.println("Option: " + option.getText());
              if (option.getText().equals("+93")) {
                  option.click();
