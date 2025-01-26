@@ -21,7 +21,7 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop=new Properties();
-			FileInputStream ip= new FileInputStream("C:\\Users\\vinay\\eclipse-workspace\\KodaCarsTest\\src\\main\\java\\com\\KodaCars\\qa\\config\\config.properties");
+			FileInputStream ip= new FileInputStream("C:\\Users\\vinay\\git\\repository\\KodaCarsTest\\src\\main\\java\\com\\KodaCars\\qa\\config\\config.properties");
 			prop.load(ip);
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -43,8 +43,7 @@ public class TestBase {
 		} else if(browserName.equals("Edge")){
 			driver = new EdgeDriver();
 	     }
-		// Define an explicit wait with a timeout of 10 seconds
-		
+				
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("url"));

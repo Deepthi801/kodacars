@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -40,59 +42,54 @@ public class AddReservationPage extends TestBase{
 	@FindBy(xpath="//input[@formcontrolname='phoneNumber']")
 	@CacheLookup
 	WebElement Phonenumber;
+	@FindBy(xpath="//*[@formcontrolname='location']")
+	@CacheLookup
+	WebElement Resrv_location;
+	
+	
+	public JavascriptExecutor js = (JavascriptExecutor) driver; 
+	public  WebDriverWait wait;
 	
 	public AddReservationPage() {
 		   PageFactory.initElements(driver, this);
 		}
 		
-	public void AddCustomerdetails() {
+	public VehicleDetailsP AddCustomerdetails() {
 		
-		Firstname.sendKeys("Priya");
-		Lastname.sendKeys("kala");
-		email.sendKeys("priyak@yopmail.com");
-		// Click dropdown to open it
-        WebElement dropdownTrigger = driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']//div[contains(@class, 'ng-select-container')]"));
-        dropdownTrigger.click();
-
-        // Wait for options to appear
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement dropdownContainer = driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']"));
-		//driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/span[1]")).click();
 		
-
-         // Locate all options and select the desired one
-         List<WebElement> options = dropdownContainer.findElements(By.cssSelector(".ng-option.ng-star-inserted"));
-         JavascriptExecutor js = (JavascriptExecutor) driver; // Initialize JavaScript Executor
-
-         for (WebElement option : options) {
-             // Scroll to the option to make it visible
-             js.executeScript("arguments[0].scrollIntoView(true);", option);
-
-             // Print the option text and click if it matches
-             System.out.println("Option: " + option.getText());
-             if (option.getText().equals("+93")) {
-                 option.click();
-                 break;
-             }
-            }
-        
+        Firstname.sendKeys("Priya");
+  		Lastname.sendKeys("kala");
+  		email.sendKeys("priyak@yopmail.com");
        
 		Phonenumber.sendKeys("456567756");
-		Postcode.sendKeys("56780");
-		Address.sendKeys("4567 street rd");
-		
-		
-//		WebElement dropdownContainer_state = driver.findElement(By.xpath("//ng-select[@formcontrolname='state']"));
-//
-//        // Locate all options and select the desired one
-//        List<WebElement> states = dropdownContainer_state.findElements(By.cssSelector(".ng-option.ng-star-inserted"));
-//        for (WebElement option : states) {
-//            System.out.println("Option: " + option.getText());
-//            if (option.getText().equals("+93")) {
-//                option.click();
-//                break;
-//            }
-//           }
+		//Postcode.sendKeys("56780");
+		//Address.sendKeys("4567 street rd");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@formcontrolname='location']/div/div/div[3]/input")));
+        dropdown.click();
+
+        // Wait for the dropdown options to appear
+        WebElement dropdownPanel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ng-option ng-option-marked ng-star-inserted']")));
+        // Find the desired option (e.g., "Damco, Noida") and click it
+        WebElement desiredOption = dropdownPanel.findElement(By.xpath("//*[@formcontrolname='location']//ng-dropdown-panel"));
+        desiredOption.click();
+
+        
+        //select source
+        //source (2)
+        // Wait for the dropdown options to appear
+        
+        //select source "AirportParkingReservations";
+        WebElement dropdown_source = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@formcontrolname='source']/div/div/div[2]/input")));
+        dropdown_source.click();
+        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div"));
+        dropdown_list.click();
+		return new VehicleDetailsP();
+	
+	}
 	}
 
-}
+
+	
+
+

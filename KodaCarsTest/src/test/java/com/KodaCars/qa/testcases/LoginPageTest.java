@@ -6,8 +6,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.KodaCara.qa.base.TestBase;
-import com.KodaCars.qa.pages.LoginPage;
 import com.KodaCars.qa.pages.DashboardPage;
+import com.KodaCars.qa.pages.LoginPage;
 
 public class LoginPageTest extends TestBase {
 	LoginPage loginpage;

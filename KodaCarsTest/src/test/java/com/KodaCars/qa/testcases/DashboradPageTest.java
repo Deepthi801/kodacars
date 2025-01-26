@@ -1,5 +1,7 @@
 package com.KodaCars.qa.testcases;
 
+import java.time.Duration;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -37,6 +39,7 @@ public class DashboradPageTest extends TestBase{
 			dashboardpg.validateuserprofile();
 		}
 		public void click_on_Addreservationbtn() {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			addreservationpg= dashboardpg.clickaddreservation();
 		}
 }
