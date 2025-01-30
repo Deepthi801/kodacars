@@ -38,11 +38,11 @@ public class AddReservationPageTest extends TestBase{
 
 		  
 		
-//	@AfterMethod
-//	public void tearDown() {
-//	driver.close();
-//
-//	}
+	@AfterMethod
+	public void tearDown() {
+	driver.close();
+
+	}
 	
 	@Test
 	public void Reservation() {

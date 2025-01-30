@@ -45,6 +45,20 @@ public class AddReservationPage extends TestBase{
 	@FindBy(xpath="//*[@formcontrolname='location']")
 	@CacheLookup
 	WebElement Resrv_location;
+	@FindBy(xpath="//input[@formcontrolname='startDate']")
+	@CacheLookup
+	WebElement Resrv_Startdate;
+	@FindBy(xpath="//input[@formcontrolname=\"startTime\"]")
+	@CacheLookup
+	WebElement Resrv_Starttime;
+	@FindBy(xpath="//input[@formcontrolname=\"endDate\"]")
+	@CacheLookup
+	WebElement Resrv_Enddate;
+	@FindBy(xpath="//input[@formcontrolname=\"endTime\"]")
+	@CacheLookup
+	WebElement Resrv_Endtime;
+	
+	
 	
 	
 	public JavascriptExecutor js = (JavascriptExecutor) driver; 
@@ -60,6 +74,7 @@ public class AddReservationPage extends TestBase{
         Firstname.sendKeys("Priya");
   		Lastname.sendKeys("kala");
   		email.sendKeys("priyak@yopmail.com");
+  		////*[@formcontrolname='mobileCode']/div/div/div[3]/input
        
 		Phonenumber.sendKeys("456567756");
 		//Postcode.sendKeys("56780");
@@ -76,15 +91,21 @@ public class AddReservationPage extends TestBase{
 
         
         //select source
-        //source (2)
-        // Wait for the dropdown options to appear
+         // Wait for the dropdown options to appear
         
-        //select source "AirportParkingReservations";
+        //select source "Walk-in";
         WebElement dropdown_source = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@formcontrolname='source']/div/div/div[2]/input")));
         dropdown_source.click();
-        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div"));
+        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[5]"));
         dropdown_list.click();
-		return new VehicleDetailsP();
+        
+        
+        Resrv_Startdate.sendKeys("02/15/2025");
+        Resrv_Starttime.sendKeys("9:00 AM");
+        Resrv_Enddate.sendKeys("03/12/2025");
+       // Resrv_Endtime.sendKeys("6:00 PM");
+        
+       	return new VehicleDetailsP();
 	
 	}
 	}

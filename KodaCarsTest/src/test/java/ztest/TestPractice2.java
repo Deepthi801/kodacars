@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -24,7 +26,7 @@ public class TestPractice2 {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static JavascriptExecutor js;
-	
+	public static WebDriverWait wait;
 	
 	
 
@@ -66,7 +68,7 @@ public class TestPractice2 {
 		driver.findElement(By.xpath("//input[@formcontrolname='userName']")).sendKeys(prop.getProperty("username"));
 		driver.findElement(By.xpath("//input[@formcontrolname='password']")).sendKeys(prop.getProperty("password"));
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		//addreservation
 		driver.findElement(By.xpath("//label[@class='clr cursor']/i")).click();
 		//click no reservation number
@@ -75,7 +77,7 @@ public class TestPractice2 {
 		//Customer details
 		// Wait for the page to load and the dropdown to be clickable
 		
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@formcontrolname='location']/div/div/div[3]/input")));
         dropdown.click();
 
@@ -93,8 +95,15 @@ public class TestPractice2 {
         //select source "AirportParkingReservations";
         WebElement dropdown_source = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@formcontrolname='source']/div/div/div[2]/input")));
         dropdown_source.click();
-        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div"));
+     //   WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div"));
+        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[5]"));
         dropdown_list.click();
+        driver.findElement(By.xpath("//input[@formcontrolname='startDate']")).
+        
+        sendKeys("02/15/2025");
+         driver.findElement(By.xpath("//input[@formcontrolname=\"startTime\"]")).sendKeys("9:00 AM");
+         driver.findElement(By.xpath("//input[@formcontrolname=\"endDate\"]")).sendKeys("03/12/2025");
+       //  driver.findElement(By.xpath("//input[@formcontrolname=\"endTime\"]")).sendKeys("6:00 PM");
 
         //vehicle details
 
@@ -144,6 +153,8 @@ public class TestPractice2 {
         	
         	    }
     }
+
+   		
 }
 
 

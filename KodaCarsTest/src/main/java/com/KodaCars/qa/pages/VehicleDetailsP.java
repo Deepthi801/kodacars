@@ -14,7 +14,7 @@ public class VehicleDetailsP extends TestBase {
 	@FindBy(xpath ="//button[contains(text(),'Add Vehicle')]")
 	@CacheLookup
 	WebElement AddVehicle_btn;
-	@FindBy(xpath ="//ng-select[@formcontrolname='carColor']")
+	@FindBy(xpath ="//*[@formcontrolname='carColor']/div/div/div[3]/input")
 	@CacheLookup
 	WebElement Carcolor_drp;
 	@FindBy(xpath ="//ng-select[@formcontrolname='make']/div/div/div[3]/input")
@@ -51,17 +51,22 @@ public class VehicleDetailsP extends TestBase {
 		  
 		}
 	 
-	// public static JavascriptExecutor js;
 	
 	 public void Click_on_add_velicle_btn() {
+
 		 AddVehicle_btn.click();
 	 }
 	 
 	 
-	 public void AddVehicledetails() {
+	 public void AddVehicledetails() throws InterruptedException {
+		 JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	     js1.executeScript("arguments[0].scrollIntoView(true);", AddVehicle_btn);
+		 AddVehicle_btn.click();
 		
     //select car color
-        Carcolor_drp.click();
+		 JavascriptExecutor js2 = (JavascriptExecutor) driver;
+	     js2.executeScript("window.scrollBy(0,3500)");
+         Carcolor_drp.click();
         
    //car color
     String colour = prop.getProperty("grey");
@@ -77,15 +82,15 @@ public class VehicleDetailsP extends TestBase {
      driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[" + carModelIndex + "]")).click();
      
      // car licence
-     Licenceno.sendKeys("Kjl 00987");
+     Licenceno.sendKeys("KJLl 00987");
    //car licence state
      Car_State.click();
      String carstate= prop.getProperty("carstate");
      driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[" + carstate + "]")).click();
      
-     Ticket.sendKeys(" ");
-     TagId.sendKeys("   ");
-     Comments.sendKeys("  ");
+     Ticket.sendKeys("9878675");
+     TagId.sendKeys("T-5698");
+     Comments.sendKeys("Checked in here tonight");
      
      JavascriptExecutor js = (JavascriptExecutor) driver;
      js.executeScript("window.scrollBy(0,3500)");
@@ -106,6 +111,11 @@ public class VehicleDetailsP extends TestBase {
     	
     	    }
 }
+	 
+	
+	
+			 
+	 
 }
 	
 	
