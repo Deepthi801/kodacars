@@ -1,22 +1,15 @@
 package com.KodaCars.qa.pages;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import com.KodaCara.qa.base.TestBase;
 
 public class AddReservationPage extends TestBase{
@@ -39,6 +32,9 @@ public class AddReservationPage extends TestBase{
 	@FindBy(xpath="//input[@formcontrolname='address']")
 	@CacheLookup
 	WebElement Address;
+	@FindBy(xpath="//*[@formcontrolname='mobileCode']/div/div/div[3]/input")
+	@CacheLookup
+	WebElement Phonecode;
 	@FindBy(xpath="//input[@formcontrolname='phoneNumber']")
 	@CacheLookup
 	WebElement Phonenumber;
@@ -70,13 +66,14 @@ public class AddReservationPage extends TestBase{
 		
 	public VehicleDetailsP AddCustomerdetails() {
 		
-		
+//		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/span[1]")).click();
+//  		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/ng-dropdown-panel/div/div[2]/div[1]")).sendKeys("+93");
+		Phonenumber.sendKeys("456567756");
         Firstname.sendKeys("Priya");
   		Lastname.sendKeys("kala");
   		email.sendKeys("priyak@yopmail.com");
-  		////*[@formcontrolname='mobileCode']/div/div/div[3]/input
-       
-		Phonenumber.sendKeys("456567756");
+  		Phonecode.click();
+  		
 		//Postcode.sendKeys("56780");
 		//Address.sendKeys("4567 street rd");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -89,22 +86,16 @@ public class AddReservationPage extends TestBase{
         WebElement desiredOption = dropdownPanel.findElement(By.xpath("//*[@formcontrolname='location']//ng-dropdown-panel"));
         desiredOption.click();
 
-        
         //select source
-         // Wait for the dropdown options to appear
-        
         //select source "Walk-in";
         WebElement dropdown_source = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@formcontrolname='source']/div/div/div[2]/input")));
         dropdown_source.click();
         WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[5]"));
         dropdown_list.click();
-        
-        
         Resrv_Startdate.sendKeys("02/15/2025");
         Resrv_Starttime.sendKeys("9:00 AM");
         Resrv_Enddate.sendKeys("03/12/2025");
-       // Resrv_Endtime.sendKeys("6:00 PM");
-        
+        Resrv_Endtime.sendKeys("6:00 PM");
        	return new VehicleDetailsP();
 	
 	}

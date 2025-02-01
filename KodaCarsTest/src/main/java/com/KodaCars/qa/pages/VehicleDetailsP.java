@@ -66,6 +66,7 @@ public class VehicleDetailsP extends TestBase {
     //select car color
 		 JavascriptExecutor js2 = (JavascriptExecutor) driver;
 	     js2.executeScript("window.scrollBy(0,3500)");
+	     Thread.sleep(2000);
          Carcolor_drp.click();
         
    //car color
@@ -102,6 +103,7 @@ public class VehicleDetailsP extends TestBase {
     	        // Perform actions if car is oversize
     	        try {
     	            Oversizecar.click();  
+    	            Thread.sleep(2000);
     	            OversizeVehicleCategory.click();
     	            String OversizeCarsize= prop.getProperty("large");
     	            driver.findElement(By.xpath("//ng-select[@formcontrolname='vehicleOversizeCategoryId']/ng-dropdown-panel/div/div[2]/div[" + OversizeCarsize + "]")).click();

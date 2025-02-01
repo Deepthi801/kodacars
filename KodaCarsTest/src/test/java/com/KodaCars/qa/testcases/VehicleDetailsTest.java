@@ -43,7 +43,7 @@ public class VehicleDetailsTest extends TestBase {
 	
 
  @Test
- public void EnterVehicleDetails() throws InterruptedException {
+ public void EnterVehicleDetails() throws InterruptedException { 
 	 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 	// vehicledetailspg.Click_on_add_velicle_btn();
 	 vehicledetailspg.AddVehicledetails();
