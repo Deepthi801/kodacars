@@ -89,9 +89,9 @@ public class VehicleDetailsP extends TestBase {
      String carstate= prop.getProperty("carstate");
      driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[" + carstate + "]")).click();
      
-     Ticket.sendKeys("9878675");
-     TagId.sendKeys("T-5698");
-     Comments.sendKeys("Checked in here tonight");
+     //Ticket.sendKeys("9878675");
+     TagId.sendKeys("Tg-5698");
+     Comments.sendKeys("Testing comment section");
      
      JavascriptExecutor js = (JavascriptExecutor) driver;
      js.executeScript("window.scrollBy(0,3500)");

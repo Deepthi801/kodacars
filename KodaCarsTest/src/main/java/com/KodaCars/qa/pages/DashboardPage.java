@@ -11,7 +11,7 @@ import com.KodaCara.qa.base.TestBase;
 public class DashboardPage extends LoginPage {
 	
 	
-	@FindBy(xpath="//label[@class='clr cursor']/i")
+	@FindBy(xpath="//button[contains(text(),  'Add Reservation')]")
 	@CacheLookup
 	private WebElement AddReservationbtn;
 	@FindBy(xpath="//div[@class='p-3 m-auto']/div[2]/div[1]")

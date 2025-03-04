@@ -35,11 +35,11 @@ public class VehicleDetailsTest extends TestBase {
 		vehicledetailspg= new VehicleDetailsP();
 	}
 	
-//	@AfterMethod
-//	public void tearDown() {
-//	driver.close();
-//
-//	}
+	@AfterMethod
+	public void tearDown() {
+	driver.close();
+
+	}
 	
 
  @Test

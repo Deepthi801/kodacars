@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.KodaCara.qa.base.TestBase;
@@ -13,6 +14,8 @@ import com.KodaCars.qa.pages.DashboardPage;
 import com.KodaCars.qa.pages.LoginPage;
 import com.KodaCars.qa.pages.VehicleDetailsP;
 
+import ztest.ExtentReport;
+@Listeners(ExtentReport.class)
 public class AddReservationPageTest extends TestBase{
 
 	LoginPage loginpage;

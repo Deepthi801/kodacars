@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ztest.TestPractice4">
+      <class name="com.KodaCars.qa.testcases.AddReservationPageTest">
         <methods>
+          <include name="Reservation"/>
+          <include name="tearDown"/>
           <include name="initialization"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- ztest.TestPractice4 -->
+      </class> <!-- com.KodaCars.qa.testcases.AddReservationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

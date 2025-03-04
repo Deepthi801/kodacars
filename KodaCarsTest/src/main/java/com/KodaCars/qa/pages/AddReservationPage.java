@@ -14,7 +14,7 @@ import com.KodaCara.qa.base.TestBase;
 
 public class AddReservationPage extends TestBase{
 
-	@FindBy(xpath="//span[contains(text(), 'Add Reservation')]")
+	@FindBy(xpath="//span[contains(text(),  'Add Reservation')]")
 	@CacheLookup
 	WebElement Header;
 	@FindBy(xpath="//input[@formcontrolname='firstName']")
@@ -53,6 +53,9 @@ public class AddReservationPage extends TestBase{
 	@FindBy(xpath="//input[@formcontrolname=\"endTime\"]")
 	@CacheLookup
 	WebElement Resrv_Endtime;
+	@FindBy(xpath="//*[@formcontrolname='location']/div/div/div[3]/input")
+	@CacheLookup
+	
 	
 	
 	
@@ -66,12 +69,10 @@ public class AddReservationPage extends TestBase{
 		
 	public VehicleDetailsP AddCustomerdetails() {
 		
-//		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/span[1]")).click();
-//  		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/ng-dropdown-panel/div/div[2]/div[1]")).sendKeys("+93");
-		Phonenumber.sendKeys("456567756");
-        Firstname.sendKeys("Priya");
-  		Lastname.sendKeys("kala");
-  		email.sendKeys("priyak@yopmail.com");
+		Phonenumber.sendKeys(prop.getProperty("PhoneNumber"));
+        Firstname.sendKeys(prop.getProperty("FirstName"));
+  		Lastname.sendKeys(prop.getProperty("LastName"));
+  		email.sendKeys(prop.getProperty("Email"));
   		Phonecode.click();
   		
 		//Postcode.sendKeys("56780");
@@ -92,9 +93,9 @@ public class AddReservationPage extends TestBase{
         dropdown_source.click();
         WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[5]"));
         dropdown_list.click();
-        Resrv_Startdate.sendKeys("02/15/2025");
+        Resrv_Startdate.sendKeys("02/20/2025");
         Resrv_Starttime.sendKeys("9:00 AM");
-        Resrv_Enddate.sendKeys("03/12/2025");
+        Resrv_Enddate.sendKeys("02/28/2025");
         Resrv_Endtime.sendKeys("6:00 PM");
        	return new VehicleDetailsP();
 	
