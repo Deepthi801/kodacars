@@ -35,15 +35,15 @@ public class VehicleDetailsTest extends TestBase {
 		vehicledetailspg= new VehicleDetailsP();
 	}
 	
-	@AfterMethod
-	public void tearDown() {
-	driver.close();
-
-	}
+//	@AfterMethod
+//	public void tearDown() {
+//	driver.close();
+//
+//	}
 	
 
  @Test
- public void EnterVehicleDetails() throws InterruptedException { 
+ public void EnterVehicleDetails() throws InterruptedException {
 	 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 	// vehicledetailspg.Click_on_add_velicle_btn();
 	 vehicledetailspg.AddVehicledetails();

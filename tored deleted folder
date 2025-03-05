@@ -1,0 +1,24 @@
+[33mcommit 9b5b98161209bd804a71e06868876d3cd1019dba[m
+Author: Deepthi801 <83091782+Deepthi801@users.noreply.github.com>
+Date:   Wed Mar 5 11:19:00 2025 -0500
+
+    Revert "Allure reports added"
+    
+    This reverts commit 0668f8f5d4b1ac2208beeaf0da1eec4e1ac99dd8.
+
+KodaCarsTest/src/main/java/com/KodaCars/qa/util/TestListener.java
+KodaCarsTest/src/main/java/com/KodaCars/qa/util/TestLogger.java
+KodaCarsTest/src/test/resources/Allure.properties
+KodaCarsTest/src/test/resources/chaintest.properties
+
+[33mcommit f5f31698a4375dfe55eb568ab1ced5f33ffca221[m[33m ([m[1;31morigin/Br[m[33m)[m
+Author: Deepthi801 <83091782+Deepthi801@users.noreply.github.com>
+Date:   Wed Mar 5 10:59:34 2025 -0500
+
+    Delete KodaCarsTest/src/test/java/ztest directory
+    
+    Signed-off-by: Deepthi801 <83091782+Deepthi801@users.noreply.github.com>
+
+KodaCarsTest/src/test/java/ztest/TestPractice2.java
+KodaCarsTest/src/test/java/ztest/TestingPractice.java
+KodaCarsTest/src/test/java/ztest/zzpractice.java

@@ -29,7 +29,6 @@ public class DashboradPageTest extends TestBase{
 			dashboardpg = loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 				}
 
-		
 		@AfterMethod
 		public void tearDown() {
 		driver.close();

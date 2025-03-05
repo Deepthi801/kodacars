@@ -17,9 +17,7 @@
   </properties>
 
   <dependencyManagement>
-  
     <dependencies>
-
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
@@ -31,69 +29,18 @@
   </dependencyManagement>
 
   <dependencies>
-<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+  	  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.29.0</version>
+    <version>4.28.0</version>
 </dependency>
-
+<!-- https://mvnrepository.com/artifact/com.paulhammant/ngwebdriver -->
 <dependency>
-		<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-bom</artifactId>
-			<version>2.29.0</version>
-			<type>pom</type>
-		</dependency>	
-<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
-<dependency>
-    <groupId>com.google.api-client</groupId>
-    <artifactId>google-api-client</artifactId>
-    <version>2.7.1</version>
+    <groupId>com.paulhammant</groupId>
+    <artifactId>ngwebdriver</artifactId>
+    <version>1.1.6</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client -->
-<dependency>
-    <groupId>com.google.oauth-client</groupId>
-    <artifactId>google-oauth-client</artifactId>
-    <version>1.36.0</version>
-</dependency>
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.15.1</version> <!-- Use the latest version -->
-</dependency>
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.20.0</version> <!-- Use the latest version -->
-</dependency>
-<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.5.17</version>
-    <scope>compile</scope>
-</dependency>
-
-
-<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets -->
-<dependency>
-    <groupId>com.google.apis</groupId>
-    <artifactId>google-api-services-sheets</artifactId>
-    <version>v4-rev612-1.25.0</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.1.2</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.aventstack/chaintest-core -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>chaintest-testng</artifactId>
-    <version>1.0.11</version>
-</dependency>
-
 
   </dependencies>
 

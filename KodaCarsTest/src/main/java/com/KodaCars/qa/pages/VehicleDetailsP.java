@@ -66,7 +66,6 @@ public class VehicleDetailsP extends TestBase {
     //select car color
 		 JavascriptExecutor js2 = (JavascriptExecutor) driver;
 	     js2.executeScript("window.scrollBy(0,3500)");
-	     Thread.sleep(2000);
          Carcolor_drp.click();
         
    //car color
@@ -89,9 +88,9 @@ public class VehicleDetailsP extends TestBase {
      String carstate= prop.getProperty("carstate");
      driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[" + carstate + "]")).click();
      
-     //Ticket.sendKeys("9878675");
-     TagId.sendKeys("Tg-5698");
-     Comments.sendKeys("Testing comment section");
+     Ticket.sendKeys("9878675");
+     TagId.sendKeys("T-5698");
+     Comments.sendKeys("Checked in here tonight");
      
      JavascriptExecutor js = (JavascriptExecutor) driver;
      js.executeScript("window.scrollBy(0,3500)");
@@ -103,7 +102,6 @@ public class VehicleDetailsP extends TestBase {
     	        // Perform actions if car is oversize
     	        try {
     	            Oversizecar.click();  
-    	            Thread.sleep(2000);
     	            OversizeVehicleCategory.click();
     	            String OversizeCarsize= prop.getProperty("large");
     	            driver.findElement(By.xpath("//ng-select[@formcontrolname='vehicleOversizeCategoryId']/ng-dropdown-panel/div/div[2]/div[" + OversizeCarsize + "]")).click();

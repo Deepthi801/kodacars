@@ -1,238 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[onStart method Kodacars Test]]>
-    </line>
-    <line>
-      <![CDATA[initialization Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[initializationReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[loginPageTileTest Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[loginPageTileTestReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[loginPageLogoTest Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[loginPageLogoTestReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[logintest Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[logintestReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[initialization Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[initializationReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[Reservation Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[ReservationReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[initialization Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[initializationReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[EnterVehicleDetails Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[EnterVehicleDetailsReporter: Test is success.]]>
-    </line>
-    <line>
-      <![CDATA[initialization Reporter: Test started.]]>
-    </line>
-    <line>
-      <![CDATA[initializationReporter: Test is success.]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-03-04T11:05:28 EST" name="Kodacars Automation" finished-at="2025-03-04T11:07:43 EST" duration-ms="135018">
+  <suite started-at="2025-01-29T21:21:31 EST" name="Default suite" finished-at="2025-01-29T21:22:07 EST" duration-ms="35527">
     <groups>
     </groups>
-    <test started-at="2025-03-04T11:05:28 EST" name="Kodacars Test" finished-at="2025-03-04T11:07:43 EST" duration-ms="135018">
-      <class name="com.KodaCars.qa.testcases.LoginPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:29 EST" name="setup" finished-at="2025-03-04T11:05:37 EST" duration-ms="8041" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="initialization()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:37 EST" name="initialization" finished-at="2025-03-04T11:05:43 EST" duration-ms="5203" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[initialization Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[initializationReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:43 EST" name="tearDown" finished-at="2025-03-04T11:05:43 EST" duration-ms="284" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:43 EST" name="setup" finished-at="2025-03-04T11:05:49 EST" duration-ms="5719" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginPageTileTest()[pri:1, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:49 EST" name="loginPageTileTest" finished-at="2025-03-04T11:05:49 EST" duration-ms="24" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[loginPageTileTest Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[loginPageTileTestReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginPageTileTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:49 EST" name="tearDown" finished-at="2025-03-04T11:05:49 EST" duration-ms="389" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:49 EST" name="setup" finished-at="2025-03-04T11:05:55 EST" duration-ms="5701" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginPageLogoTest()[pri:2, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:55 EST" name="loginPageLogoTest" finished-at="2025-03-04T11:05:55 EST" duration-ms="75" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[loginPageLogoTest Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[loginPageLogoTestReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginPageLogoTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:55 EST" name="tearDown" finished-at="2025-03-04T11:05:55 EST" duration-ms="269" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:05:55 EST" name="setup" finished-at="2025-03-04T11:06:00 EST" duration-ms="5478" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="logintest()[pri:3, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:06:00 EST" name="logintest" finished-at="2025-03-04T11:06:01 EST" duration-ms="564" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[logintest Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[logintestReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logintest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.LoginPageTest@53fb3dab]" started-at="2025-03-04T11:06:01 EST" name="tearDown" finished-at="2025-03-04T11:06:01 EST" duration-ms="267" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.KodaCars.qa.testcases.LoginPageTest -->
-      <class name="com.KodaCars.qa.testcases.AddReservationPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:15 EST" name="setup" finished-at="2025-03-04T11:06:29 EST" duration-ms="14037" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Reservation()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:29 EST" name="Reservation" finished-at="2025-03-04T11:06:31 EST" duration-ms="2427" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Reservation Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[ReservationReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- Reservation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:31 EST" name="tearDown" finished-at="2025-03-04T11:06:32 EST" duration-ms="307" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:32 EST" name="setup" finished-at="2025-03-04T11:06:44 EST" duration-ms="12235" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="initialization()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:44 EST" name="initialization" finished-at="2025-03-04T11:06:51 EST" duration-ms="7173" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[initialization Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[initializationReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.AddReservationPageTest@24569dba]" started-at="2025-03-04T11:06:51 EST" name="tearDown" finished-at="2025-03-04T11:06:51 EST" duration-ms="254" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.KodaCars.qa.testcases.AddReservationPageTest -->
-      <class name="com.KodaCars.qa.testcases.DashboradPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.DashboradPageTest@8462f31]" started-at="2025-03-04T11:06:01 EST" name="setup" finished-at="2025-03-04T11:06:07 EST" duration-ms="5829" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="initialization()[pri:0, instance:com.KodaCars.qa.testcases.DashboradPageTest@8462f31]" started-at="2025-03-04T11:06:07 EST" name="initialization" finished-at="2025-03-04T11:06:14 EST" duration-ms="7340" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[initialization Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[initializationReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.DashboradPageTest@8462f31]" started-at="2025-03-04T11:06:15 EST" name="tearDown" finished-at="2025-03-04T11:06:15 EST" duration-ms="329" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.KodaCars.qa.testcases.DashboradPageTest -->
+    <test started-at="2025-01-29T21:21:31 EST" name="Default test" finished-at="2025-01-29T21:22:07 EST" duration-ms="35527">
       <class name="com.KodaCars.qa.testcases.VehicleDetailsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:06:51 EST" name="setup" finished-at="2025-03-04T11:07:07 EST" duration-ms="15418" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@3d6f0054]" started-at="2025-01-29T21:21:31 EST" name="setup" finished-at="2025-01-29T21:21:46 EST" duration-ms="14908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="EnterVehicleDetails()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:07:07 EST" name="EnterVehicleDetails" finished-at="2025-03-04T11:07:13 EST" duration-ms="6783" status="PASS">
+        <test-method signature="initialization()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@3d6f0054]" started-at="2025-01-29T21:21:46 EST" name="initialization" finished-at="2025-01-29T21:21:51 EST" duration-ms="4608" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[EnterVehicleDetails Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[EnterVehicleDetailsReporter: Test is success.]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@3d6f0054]" started-at="2025-01-29T21:21:51 EST" name="setup" finished-at="2025-01-29T21:22:04 EST" duration-ms="13254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="EnterVehicleDetails()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@3d6f0054]" started-at="2025-01-29T21:22:04 EST" name="EnterVehicleDetails" finished-at="2025-01-29T21:22:07 EST" duration-ms="2714" status="PASS">
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterVehicleDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:07:13 EST" name="tearDown" finished-at="2025-03-04T11:07:14 EST" duration-ms="588" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:07:14 EST" name="setup" finished-at="2025-03-04T11:07:33 EST" duration-ms="18486" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="initialization()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:07:33 EST" name="initialization" finished-at="2025-03-04T11:07:42 EST" duration-ms="9667" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[initialization Reporter: Test started.]]>
-            </line>
-            <line>
-              <![CDATA[initializationReporter: Test is success.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.KodaCars.qa.testcases.VehicleDetailsTest@496bc455]" started-at="2025-03-04T11:07:42 EST" name="tearDown" finished-at="2025-03-04T11:07:43 EST" duration-ms="711" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.KodaCars.qa.testcases.VehicleDetailsTest -->
-    </test> <!-- Kodacars Test -->
-  </suite> <!-- Kodacars Automation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
