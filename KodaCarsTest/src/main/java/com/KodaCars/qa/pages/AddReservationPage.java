@@ -17,7 +17,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 
 public class AddReservationPage extends TestBase{
 
@@ -96,14 +96,14 @@ public class AddReservationPage extends TestBase{
         //select source "Walk-in";
         WebElement dropdown_source = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@formcontrolname='source']/div/div/div[2]/input")));
         dropdown_source.click();
-        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[5]"));
+        WebElement dropdown_list = dropdown_source.findElement(By.xpath("//ng-select[@formcontrolname='source']/ng-dropdown-panel/div/div/div[10]"));
         dropdown_list.click();
         
         
-        Resrv_Startdate.sendKeys("02/15/2025");
+        Resrv_Startdate.sendKeys("03/15/2025");
         Resrv_Starttime.sendKeys("9:00 AM");
-        Resrv_Enddate.sendKeys("03/12/2025");
-       // Resrv_Endtime.sendKeys("6:00 PM");
+        Resrv_Enddate.sendKeys("03/20/2025");
+        Resrv_Endtime.sendKeys("6:00 PM");
         
        	return new VehicleDetailsP();
 	

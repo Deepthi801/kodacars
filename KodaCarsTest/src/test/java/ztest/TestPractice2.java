@@ -4,12 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
-=======
 
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -80,15 +77,13 @@ public class TestPractice2 {
 		  
 		//Customer details
 		// Wait for the page to load and the dropdown to be clickable
-<<<<<<< HEAD
-=======
+
 		WebElement mobilecode= driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/div/div[3]/input"));
 		mobilecode.click();
 		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/div/span[1]")).click();
 		driver.findElement(By.xpath("//ng-select[@formcontrolname='mobileCode']/ng-dropdown-panel/div/div[2]/div[1]")).click();
 		//input[@formcontrolname='firstName']
 		
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
 		
          wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@formcontrolname='location']/div/div/div[3]/input")));
@@ -116,11 +111,10 @@ public class TestPractice2 {
         sendKeys("02/15/2025");
          driver.findElement(By.xpath("//input[@formcontrolname=\"startTime\"]")).sendKeys("9:00 AM");
          driver.findElement(By.xpath("//input[@formcontrolname=\"endDate\"]")).sendKeys("03/12/2025");
-<<<<<<< HEAD
+
        //  driver.findElement(By.xpath("//input[@formcontrolname=\"endTime\"]")).sendKeys("6:00 PM");
-=======
+
         driver.findElement(By.xpath("//input[@formcontrolname=\"endTime\"]")).sendKeys("6:00 PM");
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
 
         //vehicle details
 
@@ -128,11 +122,9 @@ public class TestPractice2 {
         WebElement Vehicledetails=driver.findElement(By.xpath("//button[contains(text(),'Add Vehicle')]"));
         Vehicledetails.click();
         //select car color
-<<<<<<< HEAD
-=======
+
         
         Thread.sleep(2000);
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
         WebElement color =driver.findElement(By.xpath("//ng-select[@formcontrolname='carColor']"));
         color.click();
        //car color
@@ -154,15 +146,14 @@ public class TestPractice2 {
          driver.findElement(By.xpath("//ng-select[@formcontrolname='state']")).click();
          //car licence state
          driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[5]")).click();
-<<<<<<< HEAD
+
          driver.findElement(By.xpath("//input[@formcontrolname='ticket']")).sendKeys(" ");
          driver.findElement(By.xpath("//input[@formcontrolname='tagId']")).sendKeys("   ");
          driver.findElement(By.xpath("//textarea[@formcontrolname='comment']")).sendKeys("  ");
-=======
+
          driver.findElement(By.xpath("//input[@formcontrolname='ticket']")).sendKeys("87756780 ");
          driver.findElement(By.xpath("//input[@formcontrolname='tagId']")).sendKeys("Tg-0987");
          driver.findElement(By.xpath("//textarea[@formcontrolname='comment']")).sendKeys("This is comment section");
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
          js = (JavascriptExecutor) driver;
          js.executeScript("window.scrollBy(0,3500)");
          
@@ -180,10 +171,8 @@ public class TestPractice2 {
         	        }
         	
         	    }
-<<<<<<< HEAD
-=======
+
         	    driver.findElement(By.xpath("//button[contains(text(),  'Create Reservation')]")).click();
->>>>>>> parent of f5f3169 (Delete KodaCarsTest/src/test/java/ztest directory)
     }
 
    		

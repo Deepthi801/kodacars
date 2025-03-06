@@ -1,11 +1,10 @@
 package com.KodaCars.qa.testcases;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 import com.KodaCars.qa.pages.DashboardPage;
 import com.KodaCars.qa.pages.LoginPage;
 
@@ -18,18 +17,13 @@ public class LoginPageTest extends TestBase {
 	}
 	
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup() {
 		initialization();
 		loginpage = new LoginPage();
 		
 			}
 
-	@AfterMethod
-	public void tearDown() {
-	driver.close();
-
-	}
 	
 	@Test(priority=1)
 	public void loginPageTileTest() {
@@ -47,6 +41,13 @@ public class LoginPageTest extends TestBase {
 		dashboardpg = loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		
 	}
+	
+	@AfterClass
+	public void tearDown() {
+	driver.quit();
+
+	}
+	
 	
 	
 }

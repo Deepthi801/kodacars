@@ -1,18 +1,24 @@
+
 package com.KodaCars.qa.util;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import java.awt.*;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,7 +28,7 @@ public class TestListener extends TestBase implements  ITestListener {
 	  public  ExtentReports extent;
 	  public  ExtentTest test;
 	  public  ExtentSparkReporter sparkReporter;
-
+	  private TestLogger testLogger = new TestLogger();
 	
 	private static String getTestMethodName(ITestResult iTestResult) {
 		return iTestResult.getMethod().getConstructorOrMethod().getName();
@@ -30,7 +36,8 @@ public class TestListener extends TestBase implements  ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		TestLogger.info(getTestMethodName(result) + " Log4: Test starting.");
+		
+		testLogger.info(getTestMethodName(result) + " Log4: Test starting.");
 		Reporter.log(getTestMethodName(result) + " Reporter: Test started.");
 	}
 
@@ -41,33 +48,48 @@ public class TestListener extends TestBase implements  ITestListener {
 	      
 	    	System.out.println("Test Successful");
 	    	
-		TestLogger.info(getTestMethodName(result) + " Test is success.");
+		testLogger.info(getTestMethodName(result) + " Test is success.");
 		Reporter.log(getTestMethodName(result) + "Reporter: Test is success.");
+		String screenshotPath = GetScreenshot(result.getName(), driver, "Passed");
+		ChainTestListener.log(result.getName() + " Test Passed "); 
+		System.out.println((result.getName() + " Test Passed "));
+		System.out.println(" Test Passes ");
+		//screenshot
+		ChainTestListener.embed(screenshotPath, "/passed/image/png"); 
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		TestLogger.info(getTestMethodName(result) + " Test failed.");
+		testLogger.info(getTestMethodName(result) + " Test Failed.");
 		Reporter.log("onTestFailure" + result.getName());
 		
 
 		// add screenshot target folder
 		System.out.println(" result.getName " + result.getName());
-		String screenshot = GetScreenshot(result.getName(), driver);
+		String screenshotPath = GetScreenshot(result.getName(), driver, "FAILED");
 
 		// logs for failed test cases
-		ChainTestListener.log(result.getName() + " testcase failed "); 
-		System.out.println((result.getName() + " testcase failed "));
-		System.out.println((" testcase failed "));
+		ChainTestListener.log(result.getName() + " Test Failed "); 
+		System.out.println((result.getName() + " Test Failed "));
+		System.out.println(" Test failed ");
 		//screenshot
-		ChainTestListener.embed(screenshot, "image/png"); 
+		ChainTestListener.embed(screenshotPath, "Failed/image/png"); 
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		TestLogger.info(getTestMethodName(result) + " Test is skipped.");
-		Reporter.log(getTestMethodName(result) + "Reporter: Test is skipped.");
+		testLogger.info(getTestMethodName(result) + " Test is Skipped.");
+		Reporter.log(getTestMethodName(result) + "Reporter: Test is Skipped.");
+		String screenshotPath = GetScreenshot(result.getName(), driver, "FAILED");
+
+		// logs for failed test cases
+		ChainTestListener.log(result.getName() + " Test Skipped"); 
+		System.out.println((result.getName() + " Test Skipped"));
+		System.out.println(" Test Skipped ");
+		//screenshot
+		ChainTestListener.embed(screenshotPath, "Skipped/image/png"); 
 	}
+	
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
@@ -75,14 +97,14 @@ public class TestListener extends TestBase implements  ITestListener {
 	        failedTest.fail("Test Failed:" + result.getThrowable());
 	       	System.out.println("Test Failed");
 	     	
-		TestLogger.info("Test failed: " + getTestMethodName(result));
-		Reporter.log("Reporter:Test failed within pass percentage " + getTestMethodName(result));
+		testLogger.info("Test Failed: " + getTestMethodName(result));
+		Reporter.log("Reporter:Test Failed within pass percentage " + getTestMethodName(result));
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
 		   // Initialize the ExtentSparkReporter
-		 String reportPath = System.getProperty("user.dir") + "/Reports/ExtReport3.html";
+		 String reportPath = System.getProperty("user.dir") + "/Reports/ExtReport.html";
 
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
        
@@ -102,40 +124,75 @@ public class TestListener extends TestBase implements  ITestListener {
         extent.setSystemInfo("Tester", "Deepthi");
 
         System.out.println("Report generated at: " + reportPath);
-		TestLogger.info(" onStart method " + context.getName());
+		testLogger.info(" onStart method " + context.getName());
 		// Reporter log for Email Report
 		Reporter.log("onStart method " + context.getName());
-		ChainTestListener.log(context.getName() + " testcase failed "); 
-		System.out.println((context.getName() + " testcase failed "));
-		System.out.println((" testcase failed "));
-		//screenshot
-		String screenshot = GetScreenshot(context.getName(), driver);
-
-		ChainTestListener.embed(screenshot, "image/png"); 
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
 		   extent.flush();
-		TestLogger.info("onFinish method " + context.getName());
+		testLogger.info("onFinish method " + context.getName());
 		Reporter.log("onFinish method " + context.getName());
 	}
 
-	public String GetScreenshot(String testName, WebDriver driver) {
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		String screenshotPath = "test-output/Screenshots/screenshots" + testName + ".png";
-		try {
-			
-			FileUtils.copyFile(screenshot, new File(screenshotPath));
-			System.out.println("screensots are saved at :" + screenshotPath);
-		} catch (Exception e) {
-			System.out.println("No Screenshots were taken");
-			e.printStackTrace();
-		}
-		return screenshotPath;
+ public String GetScreenshot(String testName, WebDriver driver, String status) {
+	 TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+	    File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+	    // Generate timestamp
+	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+	    // Define screenshot folder and file path
+	    String screenshotDir = "test-output/Screenshots/";
+	    String screenshotPath = screenshotDir + testName + "_" + status.toLowerCase() + "_" + timestamp + ".png";
+
+	    try {
+	        // Ensure screenshot directory exists
+	        File dir = new File(screenshotDir);
+	        if (!dir.exists()) {
+	            dir.mkdirs();
+	        }
+
+	        // Delete old screenshots before saving new ones
+	        for (File file : dir.listFiles()) {
+	            if (file.isFile() && file.getName().startsWith(testName)) {
+	                file.delete();
+	            }
+	        }
+
+	        // Read the screenshot file into a BufferedImage
+	        BufferedImage image = ImageIO.read(screenshot);
+
+	        // Determine text color based on status
+	        Color textColor;
+	        if ("FAILED".equalsIgnoreCase(status)) {
+	            textColor = Color.RED;
+	        } else if ("PASSED".equalsIgnoreCase(status)) {
+	            textColor = Color.GREEN;
+	        } else { // SKIPPED
+	            textColor = Color.ORANGE;
+	        }
+
+	        // Draw status text and timestamp on the screenshot
+	        Graphics2D g2d = image.createGraphics();
+	        g2d.setFont(new Font("Arial", Font.BOLD, 30));
+	        g2d.setColor(textColor);
+	        g2d.drawString(status + " TEST: " + testName, 50, 50);
+	        g2d.drawString("Timestamp: " + timestamp, 50, 90);
+	        g2d.dispose();
+
+	        // Save the modified image with overlay text
+	        File outputFile = new File(screenshotPath);
+	        ImageIO.write(image, "png", outputFile);
+
+	        System.out.println("Screenshot saved at: " + screenshotPath);
+	    } catch (Exception e) {
+	        System.out.println("No screenshot was taken.");
+	        e.printStackTrace();
+	    }
+
+	    return screenshotPath;
 	}
 
 }
-
-

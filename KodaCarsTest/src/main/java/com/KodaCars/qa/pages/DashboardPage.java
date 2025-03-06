@@ -6,12 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 
 public class DashboardPage extends LoginPage {
 	
 	
-	@FindBy(xpath="//label[@class='clr cursor']/i")
+	@FindBy(xpath="//button[contains(text(),' Add Reservation')]")
 	@CacheLookup
 	private WebElement AddReservationbtn;
 	@FindBy(xpath="//div[@class='p-3 m-auto']/div[2]/div[1]")

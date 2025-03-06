@@ -2,11 +2,11 @@ package com.KodaCars.qa.testcases;
 
 import java.time.Duration;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 import com.KodaCars.qa.pages.AddReservationPage;
 import com.KodaCars.qa.pages.DashboardPage;
 import com.KodaCars.qa.pages.LoginPage;
@@ -23,7 +23,7 @@ public class VehicleDetailsTest extends TestBase {
 	}
 	
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup() {
 		initialization();
 		loginpage = new LoginPage();
@@ -35,13 +35,7 @@ public class VehicleDetailsTest extends TestBase {
 		vehicledetailspg= new VehicleDetailsP();
 	}
 	
-//	@AfterMethod
-//	public void tearDown() {
-//	driver.close();
-//
-//	}
 	
-
  @Test
  public void EnterVehicleDetails() throws InterruptedException {
 	 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
@@ -49,4 +43,11 @@ public class VehicleDetailsTest extends TestBase {
 	 vehicledetailspg.AddVehicledetails();
 	 
  }
+ 
+ @AfterClass
+	public void tearDown() {
+	driver.quit();
+
+	}
+	
 }

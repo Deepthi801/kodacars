@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ztest.TestPractice2">
+      <class name="com.KodaCars.qa.testcases.VehicleDetailsTest">
         <methods>
-          <include name="initialization"/>
+          <include name="setup"/>
+          <include name="EnterVehicleDetails"/>
         </methods>
-      </class> <!-- ztest.TestPractice2 -->
+      </class> <!-- com.KodaCars.qa.testcases.VehicleDetailsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.KodaCara.qa.base.TestBase;
+import com.KodaCars.qa.base.TestBase;
 
 public class VehicleDetailsP extends TestBase {
 	
@@ -44,6 +44,9 @@ public class VehicleDetailsP extends TestBase {
 	@FindBy(xpath ="//ng-select[@formcontrolname='vehicleOversizeCategoryId']")
 	@CacheLookup
 	WebElement OversizeVehicleCategory;
+	@FindBy(xpath="//button[contains(text(),'Create Reservation')]")
+	@CacheLookup
+	WebElement AddReservation_btn;
 	
 	  
 	 public VehicleDetailsP() {
@@ -88,7 +91,7 @@ public class VehicleDetailsP extends TestBase {
      String carstate= prop.getProperty("carstate");
      driver.findElement(By.xpath("//div[@class='ng-dropdown-panel-items scroll-host']/div/div[" + carstate + "]")).click();
      
-     Ticket.sendKeys("9878675");
+     //Ticket.sendKeys("9878675");
      TagId.sendKeys("T-5698");
      Comments.sendKeys("Checked in here tonight");
      
@@ -110,6 +113,8 @@ public class VehicleDetailsP extends TestBase {
     	        }
     	
     	    }
+    	    
+    	           AddReservation_btn.click();
 }
 	 
 	
